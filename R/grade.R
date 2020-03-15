@@ -1,6 +1,6 @@
 #' @title Grades Creators
 #'
-#' @description This is a function named 'grade' which creates a discontinuous linear grade scale
+#' @description This is a function named 'grade' which creates a discontinuous linear scale of grades for the Swiss school grading system. It allows to distinguish the slope of your grading scale for passes and fails.
 #'
 #' @param total The total points
 #' @param pass The min points to pass the exam
