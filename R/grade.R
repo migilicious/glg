@@ -6,14 +6,15 @@
 #' @param pass The min points to pass the exam
 #' @param six The min points to score a six
 #' @param cfactor The correction factor allowing for a discontinuous linear grade scale
+#' @param rnd Rounds the grades
 #' @return The grade
 #' @export
-grade <- function (total, pass, six, cfactor) {
-  if (total>=pass) {
-    if(any(is.na(total))) warning("Please drop your NAs")
-    round((((total-pass)*2.25)/((six-pass)*cfactor)+3.75)/0.5, digits = 0)*0.5
+grade <- function (total, pass, six, cfactor=1, rnd=0.5) {
+  if(any(is.na(total))) stop("Please drop your NAs")
+  if(pass>=six) warning("Your scale is bullshit")
+    if (total>=pass) {
+    round((((total-pass)*2.25)/((six-pass)*cfactor)+3.75)/rnd)*rnd
   } else {
-    if(any(is.na(total))) warning("Please drop your NAs")
-    round(((total*2.75)/(pass)+1)/0.5, digits = 0)*0.5
+    round(((total*2.75)/(pass)+1)/rnd)*rnd
   }
 }

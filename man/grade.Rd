@@ -18,7 +18,10 @@ The min points to pass the exam
 The min points to score a six
 }
   \item{cfactor}{
-The correction factor allowing for a discontinuous linear grade scale
+The correction factor allowing for a discontinuous linear grade scale (default =1)
+}
+  \item{rnd}{
+Rounds the grades to whatever value you specify (default =0.5)
 }
 }
 \examples{
