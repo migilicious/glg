@@ -10,6 +10,7 @@
 #' @return Rounds the grades to whatever value you specify (default =0.5).
 #' @export
 grade <- function (total, pass, maxp, cfactor=1, rnd=0.5) {
+  if(cfactor>1 | cfactor<0) warning("Choose a better cfactor")
   if(pass>=maxp) stop("Your scale is bullshit")
   f=round(((total*2.75)/(pass)+1)/rnd)*rnd
   p=round((((total-pass)*2.25)/((maxp-pass)*cfactor)+3.75)/rnd)*rnd

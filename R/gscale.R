@@ -8,6 +8,7 @@
 #' @return The grading scale.
 #' @export
 gscale <- function (pass, maxp, cfactor=1, gr=seq(0.75,6,0.5)) {
+  if(cfactor>1 | cfactor<0) warning("Choose a better cfactor")
   f=(gr-1)*(pass)/2.75
   p=(gr-3.75)*((maxp-pass)*cfactor)/2.25+pass
   points=ifelse(gr>4,p,f)
