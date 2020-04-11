@@ -12,7 +12,8 @@
 grade <- function (total, pass, maxp, cfactor=1, rnd=0.5) {
   if(cfactor>1 | cfactor<0) warning("Choose a better cfactor")
   if(pass>=maxp) stop("Your scale is bullshit")
-  f=round(((total*2.75)/(pass)+1)/rnd)*rnd
-  p=round((((total-pass)*2.25)/((maxp-pass)*cfactor)+3.75)/rnd)*rnd
-  ifelse(total>=pass,f,p)
+  f <- round(((total*2.75)/(pass)+1)/rnd)*rnd
+  p <- round((((total-pass)*2.25)/((maxp-pass)*cfactor)+3.75)/rnd)*rnd
+  pa <- ifelse(p>6,6,p)
+  ifelse(total>=pass,pa,f)
 }

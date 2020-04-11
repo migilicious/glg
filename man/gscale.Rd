@@ -2,10 +2,10 @@
 \alias{gscale}
 \title{Grading Scale}
 \usage{
-gscale(pass,maxp,cfactor=1)
+gscale(pass,maxp,cfactor=1,rnd=0.5)
 }
 \description{
-This is a function named 'gscale' which creates the scale of grades for the Swiss school grading system.
+The function \code{gscale()} creates grading scales for the Swiss school grading system.
 }
 \arguments{
 
@@ -18,7 +18,10 @@ The maximum number of points possible.
   \item{cfactor}{
 The correction factor allows for a steeper slope of the grading scale for passing grades. The smaller the \code{cfator}, the steeper the slope (default=1).
 }
+  \item{rnd}{
+Rounds the grades to whatever value you specify (default =0.5).
+}
 }
 \examples{
-gscale(34,90,0.8)
+gscale(pass=34,maxp=90,cfactor=0.8,rnd=0.25)
 }
